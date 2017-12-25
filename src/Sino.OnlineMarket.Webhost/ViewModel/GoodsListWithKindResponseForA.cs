@@ -10,11 +10,23 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
     /// </summary>
     public class GoodsListWithKindResponseForA
     {
+        /// <summary>
+        /// 
+        /// </summary>
         public int TotalCount { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public string GoodsKind { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
         public List<GoodsListItem> GoodsList { get; set; }
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class GoodsListItem
     {
         /// <summary>
