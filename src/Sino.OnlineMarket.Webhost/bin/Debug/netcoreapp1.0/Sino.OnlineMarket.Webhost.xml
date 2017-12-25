@@ -1,0 +1,135 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sino.OnlineMarket.Webhost</name>
+    </assembly>
+    <members>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.GoodsController">
+            <summary>
+            商品汇总管理
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.GetAllGoods">
+            <summary>
+            获取所有商品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.SelectGoodsById(System.String)">
+            <summary>
+            商品编码查询  
+            </summary>
+            <param name="Id">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.AddGoods(Sino.OnlineMarket.Webhost.ViewModel.GoodsItem)">
+            <summary>
+            上架商品
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.DeleteGoodsById(System.String)">
+            <summary>
+            下架商品
+            </summary>
+            <param name="Id">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsKind">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsImagePath">
+            <summary>
+            商品图片存放地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsKind">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsImagePath">
+            <summary>
+            商品图片存放地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.CreateDateTime">
+            <summary>
+            商品录入时间
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.GoodsListWithKindResponse">
+            <summary>
+            单类呈现商品列表
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsImagePath">
+            <summary>
+            商品图片存放地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+    </members>
+</doc>
