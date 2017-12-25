@@ -13,12 +13,14 @@ namespace Sino.OnlineMarket.Repositories.ViewModel
         /// 用户编号
         /// </summary>
         [Key]
+        public int BuyId { get; set; }
         public int UserId { get; set; }
 
         /// <summary>
         /// 商品编码
         /// </summary>
-        
+        /// 
+
         public string GoodsId { get; set; }
 
         /// <summary>
@@ -29,7 +31,7 @@ namespace Sino.OnlineMarket.Repositories.ViewModel
         /// <summary>
         /// 购物状态更新时间
         /// </summary>
-        public DateTime? BuyDateTime { get; set; }
+        public DateTime BuyDateTime { get; set; }
 
     }
 }
