@@ -101,14 +101,22 @@
             <summary>
             购买商品
             </summary>
-            <param name="body"></param>
+            <param name="Userid">用户编号</param>
+            <param name="Goodsid">商品编码</param>
             <returns></returns>
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.TaketoShoppingCar(Sino.OnlineMarket.Repositories.ViewModel.BuyGoods)">
             <summary>
             添加到购物车
             </summary>
-            <param name="body"></param>
+            <param name="body">用户和商品编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.GetGoodsFromCar(System.Int32)">
+            <summary>
+            查询购物车信息
+            </summary>
+            <param name="Userid">用户编号</param>
             <returns></returns>
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.DeleteBuyGoodsSingle(System.Int32,System.String)">
@@ -131,7 +139,7 @@
             显示已购商品记录
             </summary>
             <param name="id"></param>
-            <returns></returns>             //显示已购商品信息，需要查询的是购物状态为2的商品列表，而不是所有的购物信息，严格按照接口命名顺序以及要求来写！请修改这类代码
+            <returns></returns>             
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsListResponse.TotalCount">
             <summary>

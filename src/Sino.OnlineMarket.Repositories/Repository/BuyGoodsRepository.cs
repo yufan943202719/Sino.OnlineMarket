@@ -9,8 +9,10 @@ namespace Sino.OnlineMarket.Repositories.Repository
     public class BuyGoodsRepository
     {
         private OnlineMarketContext DB = new OnlineMarketContext();
+
+
         /// <summary>
-        /// 添加购物信息
+        /// 添加到购物车
         /// </summary>
         /// <param name="buyGoods"></param>
         /// <returns></returns>
@@ -31,6 +33,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             }
             return count;
         }
+
        /// <summary>
        /// 购买商品
        /// </summary>
@@ -66,12 +69,14 @@ namespace Sino.OnlineMarket.Repositories.Repository
             }
             return count;
         }
+
+
         /// <summary>
-        /// 查询购物信息  
+        /// 显示购物车的商品
         /// </summary>
         /// <param name="userid">用户编号</param>
         /// <returns></returns>
-        public async Task<List<BuyGoods>> GetBuyGoods(int userid)
+        public async Task<List<BuyGoods>> GetGoodsFromCar(int userid)
         {
             List<BuyGoods> b = new List<BuyGoods>();
             var buygoodslist = DB.BuyGoods.ToList();
@@ -79,7 +84,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    b = buygoodslist.Where(t => t.UserId == userid).ToList();
+                    b = buygoodslist.Where(t => t.UserId == userid&&t.BuyStatus==1).ToList();
 
 
                 });
@@ -93,10 +98,42 @@ namespace Sino.OnlineMarket.Repositories.Repository
             return b;
 
         }
+
+
         /// <summary>
-        /// 删除单个购物记录
+        /// 显示已购商品记录
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="userid">用户编号</param>
+        /// <returns></returns>
+        public async Task<List<BuyGoods>> GetBuyGoods(int userid)
+        {
+            List<BuyGoods> b = new List<BuyGoods>();
+            var buygoodslist = DB.BuyGoods.ToList();
+            try
+            {
+                await Task.Run(() =>
+                {
+                    b = buygoodslist.Where(t => t.UserId == userid && t.BuyStatus == 2).ToList();
+
+
+                });
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("获取错误信息：{0}", ex.Message.ToString());
+
+            }
+            return b;
+
+        }
+
+
+        /// <summary>
+        /// 删除购物车中单个商品
+        /// </summary>
+        /// <param name="Userid">用户编号</param>
+        /// <param name="Goodsid">商品编号</param>
         /// <returns></returns>
         public async Task<int> DeleteBuyGoodsSingle(int Userid, string Goodsid)
         {
@@ -119,11 +156,12 @@ namespace Sino.OnlineMarket.Repositories.Repository
             }
             return count;
         }
+
+
         /// <summary>
-        /// 删除全部购物记录
+        /// 清空购物车
         /// </summary>
-        /// <param name="Goodsid"></param>
-        /// <param name="Userid"></param>
+        /// <param name="Userid">用户编号</param>
         /// <returns></returns>
         public async Task<int> DeleteBuyGoodsAll(int Userid)
         {
