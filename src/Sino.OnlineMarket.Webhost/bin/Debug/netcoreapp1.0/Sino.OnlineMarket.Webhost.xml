@@ -121,17 +121,17 @@
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.DeleteBuyGoodsSingle(System.Int32,System.String)">
             <summary>
-            删除购物车单个商品
+            删除单个商品
             </summary>
-            <param name="Goodsid"></param>
-            <param name="Userid"></param>
+            <param name="Userid">用户编号</param>
+            <param name="Goodsid">商品编号</param>
             <returns></returns>
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.DeleteBuyGoodsFromCar(System.Int32)">
              <summary>
             清空购物车
              </summary>
-             <param name="Userid"></param>
+             <param name="Userid">用户编号</param>
              <returns></returns>
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.GetBuyGoods(System.Int32)">

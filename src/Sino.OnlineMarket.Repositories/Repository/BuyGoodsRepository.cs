@@ -142,7 +142,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    var b = DB.BuyGoods.FirstOrDefault(t => string.Equals(t.GoodsId, Goodsid) && t.UserId == Userid);
+                    var b = DB.BuyGoods.FirstOrDefault(t => string.Equals(t.GoodsId, Goodsid) && t.UserId == Userid && t.BuyStatus == 1);
 
                     DB.BuyGoods.Remove(b);
                     count = DB.SaveChanges();
@@ -172,7 +172,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    b = buygoodslist.Where(t => t.UserId == Userid).ToList();
+                    b = buygoodslist.Where(t => t.UserId == Userid && t.BuyStatus == 1).ToList();
 
                     DB.BuyGoods.RemoveRange(b);
                     count = DB.SaveChanges();
