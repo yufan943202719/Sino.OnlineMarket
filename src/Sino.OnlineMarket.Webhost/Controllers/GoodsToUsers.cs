@@ -25,12 +25,13 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         private BuyGoodsRepository BuyGoodsRepository = new BuyGoodsRepository();
 
 
-        /// <summary>
-        /// 购买商品
-        /// </summary>
-        /// <param name="body"></param>
-        /// <returns></returns>
-        [HttpPut("AlterBuyGoods")]
+       /// <summary>
+       /// 购买商品
+       /// </summary>
+       /// <param name="Userid">用户编号</param>
+       /// <param name="Goodsid">商品编码</param>
+       /// <returns></returns>
+        [HttpPut("BuyGoods")]
         public async Task<BuyGoodsResponse> BuyGoods(int Userid, string Goodsid)
         {
             BuyGoodsResponse response = new BuyGoodsResponse();
@@ -41,10 +42,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             if (count > 0)
             {
                 response.ReplyMsg = "购买成功";
-            }
-            else if (count == -1)
-            {
-                response.ReplyMsg = "已经购买";
             }
             else
             {
@@ -60,7 +57,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// </summary>
         /// <param name="body"></param>
         /// <returns></returns>
-        [HttpPost("AddBuyGoods")]
+        [HttpPost("TakeToShoppingCar")]
         public async Task<BuyGoodsResponse> TaketoShoppingCar([FromBody] BuyGoods body )
         {
             BuyGoodsResponse response = new BuyGoodsResponse();
@@ -85,6 +82,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 return response;
             }
 
+      /*
         /// <summary>
         /// 显示购物车的商品
         /// </summary>
@@ -96,7 +94,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
 
         }
 
-
+    */
 
         /// <summary>
         /// 删除购物车单个商品
@@ -163,7 +161,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// 显示已购商品记录
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>             //显示已购商品信息，需要查询的是购物状态为2的商品列表，而不是所有的购物信息，严格按照接口命名顺序以及要求来写！请修改这类代码
+        /// <returns></returns>             //显示已购商品信息，需要查询的是购物状态为2的商品列表，而不是所有的购物信息，严格按照接口命名顺序以及要求来写！修改这类代码
         
         [HttpGet("GetBuyGoods")]
         public async Task<BuyGoodsListResponse> GetBuyGoods(int id)
