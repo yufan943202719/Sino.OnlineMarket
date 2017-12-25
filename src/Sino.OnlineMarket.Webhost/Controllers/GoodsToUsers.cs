@@ -55,7 +55,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// <summary>
         /// 添加到购物车
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">用户和商品编号</param>
         /// <returns></returns>
         [HttpPost("TakeToShoppingCar")]
         public async Task<BuyGoodsResponse> TaketoShoppingCar([FromBody] BuyGoods body )
@@ -82,27 +82,44 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 return response;
             }
 
-      /*
-        /// <summary>
-        /// 显示购物车的商品
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet("GetGoodsFromCar")]
-        public async Task<BuyGoods> GetGoodsFromCar()
-        {
+        
+          /// <summary>
+          /// 查询购物车信息
+          /// </summary>
+          /// <param name="Userid">用户编号</param>
+          /// <returns></returns>
+          [HttpGet("GetGoodsFromCar")]
+          public async Task<BuyGoodsListResponse> GetGoodsFromCar(int Userid)
+          {
 
+            BuyGoodsListResponse response = new BuyGoodsListResponse();
+            List<BuyGoods> b = await BuyGoodsRepository.GetGoodsFromCar(Userid);
+            List<BuyGoodsList> bglr = new List<BuyGoodsList>();
+            for (int i = 0; i < b.Count; i++)
+            {
+                BuyGoodsList bgl = new BuyGoodsList
+                {
+                    UserId = b[i].UserId,
+                    GoodsId = b[i].GoodsId,
+                    BuyStatus = b[i].BuyStatus,
+                    BuyDatetime = b[i].BuyDateTime.ToString()
+                };
+                bglr.Add(bgl);
+            }
+            response.BuyGoodsList = bglr;
+            return response;
 
         }
 
-    */
+      
+
 
         /// <summary>
-        /// 删除购物车单个商品
+        /// 删除单个商品
         /// </summary>
-        /// <param name="Goodsid"></param>
-        /// <param name="Userid"></param>
+        /// <param name="Userid">用户编号</param>
+        /// <param name="Goodsid">商品编号</param>
         /// <returns></returns>
-
         [HttpDelete("DeleteBuyGoodsSingle")]
         public async Task<BuyGoodsResponse> DeleteBuyGoodsSingle(int Userid, string Goodsid)
         {
@@ -129,7 +146,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// <summary>
         ///清空购物车
         /// </summary>
-        /// <param name="Userid"></param>
+        /// <param name="Userid">用户编号</param>
         /// <returns></returns>
         [HttpDelete("DeleteBuyGoodsFromCar")]
         public async Task<BuyGoodsResponse> DeleteBuyGoodsFromCar(int Userid)
@@ -161,7 +178,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// 显示已购商品记录
         /// </summary>
         /// <param name="id"></param>
-        /// <returns></returns>             //显示已购商品信息，需要查询的是购物状态为2的商品列表，而不是所有的购物信息，严格按照接口命名顺序以及要求来写！修改这类代码
+        /// <returns></returns>             
         
         [HttpGet("GetBuyGoods")]
         public async Task<BuyGoodsListResponse> GetBuyGoods(int id)
