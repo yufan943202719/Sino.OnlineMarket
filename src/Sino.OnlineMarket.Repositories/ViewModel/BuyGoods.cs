@@ -8,12 +8,17 @@ namespace Sino.OnlineMarket.Repositories.ViewModel
 {
     public class BuyGoods
     {
+        /// <summary>
+        /// 购物信息编号
+        /// </summary>
+
+        [Key]
+        public int BuyId { get; set; }
 
         /// <summary>
         /// 用户编号
         /// </summary>
-        [Key]
-        public int BuyId { get; set; }
+
         public int UserId { get; set; }
 
         /// <summary>

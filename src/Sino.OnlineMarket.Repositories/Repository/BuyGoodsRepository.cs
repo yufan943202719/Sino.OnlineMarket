@@ -32,7 +32,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             return count;
         }
         /// <summary>
-        /// 修改购物信息
+        /// 购买商品
         /// </summary>
         /// <param name="buyGoods"></param>
         /// <returns></returns>
@@ -45,7 +45,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
                 var b = DB.BuyGoods.FirstOrDefault(t => t.UserId == Userid && t.GoodsId == Goodsid);
 
 
-                if (b.BuyStatus == 1)
+                if (b.BuyStatus == 0 || b.BuyStatus == 1)
                 {
                     b.BuyDateTime = DateTime.Now;
                     b.BuyStatus = 2;
@@ -58,9 +58,6 @@ namespace Sino.OnlineMarket.Repositories.Repository
                     });
 
                 }
-
-                else if (count == 0)
-                    return -1;
             }
             catch (Exception ex)
             {
@@ -69,7 +66,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             return count;
         }
         /// <summary>
-        /// 查询购物信息
+        /// 查询购物信息  
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
