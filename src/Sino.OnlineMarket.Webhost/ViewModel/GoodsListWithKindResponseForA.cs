@@ -8,7 +8,7 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
     /// <summary>
     /// 单类呈现商品列表
     /// </summary>
-    public class GoodsListWithKindResponse
+    public class GoodsListWithKindResponseForA
     {
         public int TotalCount { get; set; }
         public string GoodsKind { get; set; }
@@ -41,5 +41,12 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
         /// 商品库存
         /// </summary>
         public int GoodsNum { get; set; }
+
+        /// <summary>
+        /// 商品录入时间
+        /// </summary>
+        public DateTime CreateDateTime { get; set; }
+
+
     }
 }

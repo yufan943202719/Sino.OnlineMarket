@@ -127,6 +127,26 @@ namespace Sino.OnlineMarket.Repositories.Repository
         }
 
         /// <summary>
+        /// 通过商品名称获取商品详情
+        /// </summary>
+        /// <param name="name"></param>
+        /// <returns></returns>
+        public async Task<List<Goods>> GetGoodsDetialByName(string name)
+        {
+            List<Goods> goods = new List<Goods>();
+            try
+            {
+                await Task.Run(() =>
+                {
+                    goods = DB.Goods.Where(x => x.GoodsName.IndexOf(name) > -1).ToList();
+                });
+            }
+            catch(Exception ex) { }
+            return goods;
+        }
+
+
+        /// <summary>
         /// 获取所有商品信息
         /// </summary>
         /// <returns></returns>
