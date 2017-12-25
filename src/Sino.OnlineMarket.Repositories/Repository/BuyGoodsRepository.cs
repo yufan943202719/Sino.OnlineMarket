@@ -31,11 +31,12 @@ namespace Sino.OnlineMarket.Repositories.Repository
             }
             return count;
         }
-        /// <summary>
-        /// 购买商品
-        /// </summary>
-        /// <param name="buyGoods"></param>
-        /// <returns></returns>
+       /// <summary>
+       /// 购买商品
+       /// </summary>
+       /// <param name="Userid">用户编号</param>
+       /// <param name="Goodsid">商品编码</param>
+       /// <returns></returns>
         public async Task<int> AlterBuyGoods(int Userid, string Goodsid)
         {
             int count = 0;
@@ -45,7 +46,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
                 var b = DB.BuyGoods.FirstOrDefault(t => t.UserId == Userid && t.GoodsId == Goodsid);
 
 
-                if (b.BuyStatus == 0 || b.BuyStatus == 1)
+                if(b.BuyStatus == 1)
                 {
                     b.BuyDateTime = DateTime.Now;
                     b.BuyStatus = 2;
@@ -68,9 +69,9 @@ namespace Sino.OnlineMarket.Repositories.Repository
         /// <summary>
         /// 查询购物信息  
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="userid">用户编号</param>
         /// <returns></returns>
-        public async Task<List<BuyGoods>> GetBuyGoods(int id)
+        public async Task<List<BuyGoods>> GetBuyGoods(int userid)
         {
             List<BuyGoods> b = new List<BuyGoods>();
             var buygoodslist = DB.BuyGoods.ToList();
@@ -78,7 +79,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    b = buygoodslist.Where(t => t.UserId == id).ToList();
+                    b = buygoodslist.Where(t => t.UserId == userid).ToList();
 
 
                 });
