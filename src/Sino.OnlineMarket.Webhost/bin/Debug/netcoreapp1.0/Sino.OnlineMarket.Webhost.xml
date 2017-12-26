@@ -4,6 +4,13 @@
         <name>Sino.OnlineMarket.Webhost</name>
     </assembly>
     <members>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.AdministratorController.Login(Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem)">
+            <summary>
+            管理人员登陆
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
         <member name="T:Sino.OnlineMarket.Webhost.Controllers.GetGoodsBy">
             <summary>
             商品搜索
@@ -186,6 +193,26 @@
             </summary>
             <param name="body"></param>
             <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem">
+            <summary>
+            管理员登陆
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem.AdminId">
+            <summary>
+            管理人员编号
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem.AdminPasword">
+            <summary>
+            管理密码
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.AdministratorResponse">
+            <summary>
+            
+            </summary>
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsListResponse.TotalCount">
             <summary>

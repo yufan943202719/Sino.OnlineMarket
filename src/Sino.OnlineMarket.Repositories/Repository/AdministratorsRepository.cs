@@ -16,7 +16,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
         /// <param name="adminId">管理人员账户</param>
         /// <param name="password">管理登陆密码</param>
         /// <returns></returns>
-        public Administrators GetAdministrator(string adminId,string password)
+        public int GetAdministrator(string adminId,string password)
         {
             Administrators admin = new Administrators();
             List<Administrators> listadmin = DB.Administrators.ToList();
@@ -24,19 +24,15 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 Administrators a = new Administrators
                 {
-                    AdminId = "ad12345",
-                    AdminPasword = "abc123"
+                    AdminId = "admin",
+                    AdminPassword = "123456"
                 };
                 DB.Administrators.Add(a);
                 DB.SaveChanges();
             }
             listadmin = DB.Administrators.ToList();
-            listadmin = listadmin.Where(x => x.AdminId == adminId && x.AdminPasword == password).ToList();
-            if(listadmin.Count > 0)
-            {
-                admin = listadmin.First();
-            }
-            return admin;
+            listadmin = listadmin.Where(x => x.AdminId == adminId && x.AdminPassword == password).ToList();
+            return listadmin.Count;
         }
 
         /// <summary>
@@ -51,8 +47,8 @@ namespace Sino.OnlineMarket.Repositories.Repository
             int count = 0;
             try
             {
-                Administrators Ad = DB.Administrators.First(x => x.AdminId == adminId & x.AdminPasword == Pwd);
-                Ad.AdminPasword = newPwd;
+                Administrators Ad = DB.Administrators.First(x => x.AdminId == adminId & x.AdminPassword == Pwd);
+                Ad.AdminPassword = newPwd;
                 count = DB.SaveChanges();
             }
             catch(Exception ex) { }
