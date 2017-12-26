@@ -166,6 +166,27 @@
             <param name="Id"></param>
             <returns></returns>
         </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.Register(Sino.OnlineMarket.Repositories.ViewModel.Users)">
+            <summary>
+            注册
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.GetUserInfo(System.Int32)">
+            <summary>
+            获取单个用户信息
+            </summary>
+            <param name="UserId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.AlterUserInfo(Sino.OnlineMarket.Repositories.ViewModel.Users)">
+            <summary>
+            修改用户信息
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsListResponse.TotalCount">
             <summary>
             购物车列表信息条数
@@ -374,6 +395,36 @@
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsNum">
             <summary>
             商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.PhoneNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.Address">
+            <summary>
+            收件地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.PostalCode">
+            <summary>
+            邮政编码
             </summary>
         </member>
         <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UsersListItem">
