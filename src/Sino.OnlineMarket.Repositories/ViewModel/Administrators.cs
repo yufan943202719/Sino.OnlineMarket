@@ -13,6 +13,6 @@ namespace Sino.OnlineMarket.Repositories.ViewModel
         /// <summary>
         /// 管理密码
         /// </summary>
-        public string AdminPasword { get; set; }
+        public string AdminPassword { get; set; }
     }
 }
