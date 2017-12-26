@@ -16,7 +16,7 @@ namespace Sino.OnlineMarket.Repositories.ViewModel
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            var connectionStringBuilder = new SqliteConnectionStringBuilder { DataSource = "C:/Users/83627/Desktop/Sino.OnlineMarket/src/Sino.OnlineMarket.Webhost/bin/Debug/netcoreapp1.0/OnlineMarketDB.db" };
+            var connectionStringBuilder = new SqliteConnectionStringBuilder { DataSource = "OnlineMarketDB.db" };
             var connectionString = connectionStringBuilder.ToString();
             var connection = new SqliteConnection(connectionString);
             optionsBuilder.UseSqlite(connection);

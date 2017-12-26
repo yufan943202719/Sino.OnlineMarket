@@ -32,7 +32,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             catch (Exception ex) { Console.WriteLine("出错啦！" + ex.Message.ToString()); }
             return count;
         }
-
+        /*
         /// <summary>
         /// 商品图片路径
         /// </summary>
@@ -59,6 +59,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
 
             return ImagePath;
         }
+        */
 
         /// <summary>
         /// 修改商品信息
@@ -116,7 +117,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    goods = DB.Goods.First(x => x.GoodsId == Id);
+                    goods = DB.Goods.FirstOrDefault(x => x.GoodsId == Id);
                 });
             }
             catch (Exception ex)
@@ -247,5 +248,6 @@ namespace Sino.OnlineMarket.Repositories.Repository
             List<Goods> goods = DB.Goods.Where(x => x.GoodsId == Id).ToList();
             return goods.Count;
         }
+
     }
 }
