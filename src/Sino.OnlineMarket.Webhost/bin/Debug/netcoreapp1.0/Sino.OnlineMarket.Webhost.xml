@@ -67,6 +67,13 @@
             <param name="kind"></param>
             <returns></returns>
         </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsControllersByKinds.AddGoods(Sino.OnlineMarket.Webhost.ViewModel.GoodsItem)">
+            <summary>
+            上架商品
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsControllersByKinds.DeleteGoodsById(System.String)">
             <summary>
             下架商品

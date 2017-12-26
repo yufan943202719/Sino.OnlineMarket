@@ -76,13 +76,13 @@ namespace Sino.OnlineMarket.Webhost
             app.UseMvc();
             app.UseApplicationInsightsExceptionTelemetry();
 
-            app.UseStaticFiles(new StaticFileOptions()
+           /* app.UseStaticFiles(new StaticFileOptions()
             {
                 FileProvider = new PhysicalFileProvider(
                  Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, @"Images")),
                 RequestPath = new PathString(@"/sino")
             });
-
+            */
         }
     }
 }

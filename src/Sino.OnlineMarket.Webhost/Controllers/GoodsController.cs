@@ -19,7 +19,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     public class GoodsController : Controller
     {
         private GoodsRepository gr = new GoodsRepository();
-        private Goods g = new Goods();
 
         /// <summary>
         /// 获取所有商品
@@ -74,7 +73,8 @@ namespace Sino.OnlineMarket.Webhost.Controllers
        public async Task<GoodsResponse> AddGoods([FromBody] GoodsItem body)
         {
             GoodsResponse response = new GoodsResponse();
-            if(body.GoodsImagePath == "")
+            
+            if (body.GoodsImagePath == "")
             {
                 response.ReplyMsg = "图片不能为空";
                 return response;
@@ -84,11 +84,11 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 response.ReplyMsg = "商品编码不能为空";
                 return response;
             }
-            else if(gr.CheckGoodsById(body.GoodsId) > 1 )
+            if (gr.CheckGoodsById(body.GoodsId) > 0)
             {
                 response.ReplyMsg = "该商品已存在";
                 return response;
-            } 
+            }
             else if(body.GoodsName == "")
             {
                 response.ReplyMsg = "商品名称不能为空";
@@ -111,11 +111,12 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             }
             else
             {
-                var file = HttpContext.Request.Form.Files[0];
+                /*
+                 * var file = HttpContext.Request.Form.Files[0];
                 Stream stream = file.OpenReadStream();
                 string fileName = DateTime.Now.Ticks.ToString() + file.FileName;
                 var ImagePath = gr.StreamToFile(stream, fileName);
-                string gname = g.GoodsName;
+            */
                 Goods goods = new Goods
                 {
                     GoodsId = body.GoodsId,
