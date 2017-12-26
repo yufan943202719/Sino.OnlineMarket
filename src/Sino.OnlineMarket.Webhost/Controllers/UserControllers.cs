@@ -19,7 +19,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     public class UserControllers : Controller
     {
 
-        private UsersRepository ur = new UsersRepository();
+        private AUsersRepository ur = new AUsersRepository();
 
         /// <summary>
         /// 显示所有用户信息
