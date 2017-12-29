@@ -162,6 +162,25 @@
             <param name="id"></param>
             <returns></returns>             
         </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin">
+            <summary>
+            JWT用户登陆
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin.Login(Sino.OnlineMarket.Webhost.ViewModel.JwtUser)">
+            <summary>
+            登陆
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin.GetAuthToken(Sino.OnlineMarket.Webhost.ViewModel.JwtUser)">
+            <summary>
+            重置一个新的Token值
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
         <member name="T:Sino.OnlineMarket.Webhost.Controllers.UserControllers">
             <summary>
             管理用户
@@ -430,6 +449,16 @@
             <summary>
             商品库存
             </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.UserPassword">
+             <summary>
+            用户密码 
+             </summary>
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserId">
             <summary>
