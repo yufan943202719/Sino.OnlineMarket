@@ -120,8 +120,6 @@ namespace Sino.OnlineMarket.Repositories.Repository
                     }
                     count = DB.SaveChanges();
                 });
-                if (count == 0)
-                    return -1;
             }
             catch (Exception ex) { Console.WriteLine("出错啦！" + ex.Message.ToString()); }
             return count;
