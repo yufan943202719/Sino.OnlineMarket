@@ -18,19 +18,23 @@ namespace Sino.OnlineMarket.Repositories.Repository
         /// <param name="user"></param>
         /// <param name="expires"></param>
         /// <returns></returns>
-        public  string GenerateToken(string user, DateTime expires)
+        public  string GenerateToken(Users user, DateTime expire,string audience)
         {
             var handler = new JwtSecurityTokenHandler();
+            var claims = new[]
+            {
+               new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString())
 
-            ClaimsIdentity identity = new ClaimsIdentity(new GenericIdentity(user, "TokenAuth"), new[] { new Claim("EntityID", "1", ClaimValueTypes.Integer) });
+            };
+            ClaimsIdentity identity = new ClaimsIdentity(new GenericIdentity(user.UserName, "TokenAuth"), claims);
 
             var securityToken = handler.CreateToken(new SecurityTokenDescriptor
             {
-                Issuer = TokenAuthOption.Issuer,
-                Audience = TokenAuthOption.Audience,
+                Issuer = "TestIssuer",
+                Audience = audience,
                 SigningCredentials = TokenAuthOption.SigningCredentials,
                 Subject = identity,
-                Expires = expires
+                Expires = expire
             });
             return handler.WriteToken(securityToken);
         }

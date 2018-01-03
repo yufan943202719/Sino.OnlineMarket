@@ -10,11 +10,16 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
         /// <summary>
         /// 用户名
         /// </summary>
-        public string UserName { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         ///用户密码 
         /// </summary>
-        public string UserPassword { get; set; }
+        public string Password { get; set; }
+
+        /// <summary>
+        /// 当前用户身份
+        /// </summary>
+        public string audience { get; set; }
     }
 }

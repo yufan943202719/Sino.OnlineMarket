@@ -52,13 +52,15 @@ namespace Sino.OnlineMarket.Webhost
             Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
+            TokenAuthOption.Issuer = "TestIssuer";
+            TokenAuthOption.Audience = "TestAudience";
             services.AddAuthorization(auth =>
             {
                 auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
-        .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
-        .RequireAuthenticatedUser().Build());
-
+                    .AddAuthenticationSchemes(JwtBearerDefaults.AuthenticationScheme‌​)
+                    .RequireAuthenticatedUser().Build());
             });
+
             services.AddMvc();
             services.AddSwaggerGen();
             services.AddEntityFrameworkSqlite().AddDbContext<OnlineMarketContext>();
@@ -83,12 +85,7 @@ namespace Sino.OnlineMarket.Webhost
             {
                 app.UseExceptionHandler("/Home/Error");
             }
-            app.UseMvcWithDefaultRoute();
-            app.UseSwagger();
-            app.UseSwaggerUi();
-            app.UseMvc();
-            app.UseApplicationInsightsExceptionTelemetry();
-
+            
             //处理异常
             #region Handle Exception 
             app.UseExceptionHandler(appBuilder => {
@@ -131,9 +128,16 @@ namespace Sino.OnlineMarket.Webhost
                     ValidateIssuerSigningKey = true,
                     ValidateLifetime = true,
                     ClockSkew = TimeSpan.FromMinutes(0)
+
                 }
             });
             #endregion
+     
+            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
+            app.UseSwagger();
+            app.UseSwaggerUi();
+            app.UseApplicationInsightsExceptionTelemetry();
 
 
             /* app.UseStaticFiles(new StaticFileOptions()
