@@ -72,8 +72,8 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         [HttpPost("AddGoods")]
        public async Task<GoodsResponse> AddGoods([FromBody] GoodsItem body)
         {
+
             GoodsResponse response = new GoodsResponse();
-            
             if (body.GoodsImagePath == "")
             {
                 response.ReplyMsg = "图片不能为空";
@@ -140,18 +140,70 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 return response;
             }
         }
-        /*(未完待续)
+
+
         /// <summary>
         /// 修改商品信息
         /// </summary>
         /// <param name="Id"></param>
         /// <returns></returns>
-        [HttpGet("AlterGoodsById")]
-        public async Task<GoodsResponse> AlterGoodsById(string Id)
+        [HttpPost("AlterGoodsInfo")]
+        public async Task<GoodsResponse> AlterGoodsInfo([FromBody]Goods body)
         {
-
+            GoodsResponse response = new GoodsResponse();
+            if (body.GoodsId == "")
+            {
+                response.ReplyMsg = "商品编码不能为空";
+                return response;
+            }
+            else if (body.GoodsName == "")
+            {
+                response.ReplyMsg = "商品名称不能为空";
+                return response;
+            }
+            else if(body.GoodsNum.Equals(""))
+            {
+                response.ReplyMsg = "商品库存不能为空";
+                return response;
+            }
+            else if(body.GoodsKind == "")
+            {
+                response.ReplyMsg = "商品类型不能为空";
+                return response;
+            }
+            else if(body.GoodsPrice.Equals(""))
+            {
+                response.ReplyMsg = "商品价格不能为空";
+                return response;
+            }
+            else if(body.CreateDateTime.Equals(""))
+            {
+                response.ReplyMsg = "商品录入时间不能为空";
+                return response;
+            }
+            else if(body.GoodsImagePath == "")
+            {
+                response.ReplyMsg = "商品图片存放地址不能为空";
+                return response;
+            }
+            else
+            {
+                var count = await gr.EditGoods(body);
+                if (count > 0)
+                {
+                    response.ReplyMsg = "用户信息修改成功";
+                }
+                else if (count == 0)
+                {
+                    response.ReplyMsg = "尚未修改任何信息";
+                }
+                else
+                {
+                    response.ReplyMsg = "用户信息修改失败";
+                }
+                return response;
+            }
         }
-        */
 
         /// <summary>
         /// 下架商品

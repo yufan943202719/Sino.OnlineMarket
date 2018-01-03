@@ -158,7 +158,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 {
                     response.ReplyMsg = "用户信息编辑成功";
                 }
-                else if (count == -1)
+                else if (count == 0)
                 {
                     response.ReplyMsg = "尚未修改任何信息";
                 }

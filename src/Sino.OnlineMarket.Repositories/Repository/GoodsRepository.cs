@@ -73,7 +73,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    Goods g = DB.Goods.First(x => x.GoodsId == goods.GoodsId);
+                    Goods g = DB.Goods.FirstOrDefault(x => x.GoodsId == goods.GoodsId);
                     if (goods.GoodsName != g.GoodsName)
                     {
                         g.GoodsName = goods.GoodsName;
@@ -200,7 +200,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             {
                 await Task.Run(() =>
                 {
-                    var goods = DB.Goods.First(x => x.GoodsId == Id);
+                    var goods = DB.Goods.FirstOrDefault(x => x.GoodsId == Id);
                     DB.Goods.Remove(goods);
                     count = DB.SaveChanges();
                 });

@@ -55,6 +55,13 @@
             <param name="body"></param>
             <returns></returns>
         </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.AlterGoodsInfo(Sino.OnlineMarket.Repositories.ViewModel.Goods)">
+            <summary>
+            修改商品信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.DeleteGoodsById(System.String)">
             <summary>
             下架商品
@@ -154,6 +161,18 @@
             </summary>
             <param name="id"></param>
             <returns></returns>             
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin">
+            <summary>
+            JWT用户登陆
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin.GetAuthToken(Sino.OnlineMarket.Webhost.ViewModel.JwtUser)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
         </member>
         <member name="T:Sino.OnlineMarket.Webhost.Controllers.UserControllers">
             <summary>
@@ -422,6 +441,21 @@
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsNum">
             <summary>
             商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.Password">
+             <summary>
+            用户密码 
+             </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.audience">
+            <summary>
+            当前用户身份
             </summary>
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserId">

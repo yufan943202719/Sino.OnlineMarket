@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sino.OnlineMarket.Webhost.ViewModel;
 using Sino.OnlineMarket.Repositories.ViewModel;
 using Sino.OnlineMarket.Repositories.Repository;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -14,7 +15,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     /// <summary>
     ///商品显示
     /// </summary>
-    [Route("sino/[controller]")]
+    [Route("sino/[controller]")] 
     public class GoodsShow : Controller
     {
 
@@ -26,6 +27,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("GetAllGoods")]
+        [Authorize("Bearer")]
         public GoodsListResponseForU GetAllGoods()
         {
             GoodsListResponseForU response = new GoodsListResponseForU();
