@@ -8,7 +8,7 @@ namespace Sino.OnlineMarket.Webhost.Auth
 {
     public class TokenAuthOption
     {
-        public static string Audience { get; set; } 
+        public static string Audience { get;  } =  "TestAudience";
         public static string Issuer { get; set; } 
         public static RsaSecurityKey Key { get; } = new RsaSecurityKey(RSAKeyHelper.GenerateKey());
         public static SigningCredentials SigningCredentials { get; } = new SigningCredentials(Key, SecurityAlgorithms.RsaSha256Signature);

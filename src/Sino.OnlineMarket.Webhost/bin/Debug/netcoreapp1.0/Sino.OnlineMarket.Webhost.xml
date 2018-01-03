@@ -453,6 +453,11 @@
             用户密码 
              </summary>
         </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.audience">
+            <summary>
+            当前用户身份
+            </summary>
+        </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserId">
             <summary>
             用户编号

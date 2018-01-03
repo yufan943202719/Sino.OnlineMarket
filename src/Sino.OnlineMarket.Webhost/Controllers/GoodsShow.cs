@@ -15,8 +15,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     /// <summary>
     ///商品显示
     /// </summary>
-    [Route("sino/[controller]")]
-    
+    [Route("sino/[controller]")] 
     public class GoodsShow : Controller
     {
 
