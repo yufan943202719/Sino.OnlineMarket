@@ -53,7 +53,7 @@ namespace Sino.OnlineMarket.Webhost
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
             TokenAuthOption.Issuer = "TestIssuer";
-            TokenAuthOption.Audience = "TestAudience";
+            
             services.AddAuthorization(auth =>
             {
                 auth.AddPolicy("Bearer", new AuthorizationPolicyBuilder()
