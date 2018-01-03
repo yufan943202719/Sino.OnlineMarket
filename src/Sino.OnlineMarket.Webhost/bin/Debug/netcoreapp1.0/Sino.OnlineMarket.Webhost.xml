@@ -167,16 +167,9 @@
             JWT用户登陆
             </summary>
         </member>
-        <member name="M:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin.Login(Sino.OnlineMarket.Webhost.ViewModel.JwtUser)">
-            <summary>
-            登陆
-            </summary>
-            <param name="body"></param>
-            <returns></returns>
-        </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin.GetAuthToken(Sino.OnlineMarket.Webhost.ViewModel.JwtUser)">
             <summary>
-            重置一个新的Token值
+            用户登录
             </summary>
             <param name="user"></param>
             <returns></returns>
@@ -450,12 +443,12 @@
             商品库存
             </summary>
         </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.UserName">
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.Name">
             <summary>
             用户名
             </summary>
         </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.UserPassword">
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.Password">
              <summary>
             用户密码 
              </summary>

@@ -26,56 +26,36 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         private TokenRepository tr = new TokenRepository();
         UsersRepository ur = new UsersRepository();
 
-        /// <summary>
-        /// 登陆
-        /// </summary>
-        /// <param name="body"></param>
-        /// <returns></returns>
-        [HttpPost("Login")]
-        public dynamic Login([FromBody] JwtUser body)
+        [HttpGet]
+        [Authorize("Bearer")]
+        public IEnumerable<string> get()
         {
-            bool authenticated = false;
-            
-            int entityId = -1;
-            string jwtuser = null;
-            string token = null;
-            DateTime tokenExpires = default(DateTime);
-            var currentUser = HttpContext.User;
-            authenticated = currentUser.Identity.IsAuthenticated;
-                if (authenticated)
-                {
-                    jwtuser = currentUser.Identity.Name;
-                foreach (Claim c in currentUser.Claims)
-                {
-                    if (c.Type == "EntityID")
-                        entityId = Convert.ToInt32(c.Value);
-                }
-                    tokenExpires = DateTime.UtcNow.AddMinutes(2);
-                    token = tr.GenerateToken(body.UserName, tokenExpires);
-                }
-            return new { authenticated = authenticated, jwtuser = body.UserName, entityId = entityId, token = token, tokenExpires = tokenExpires };
-            /*
-            
-
-            return $"Hello! {HttpContext.User.Identity.Name}, your ID is:{id}";
-            */
+            return new string[] { "value1", "value2" };
         }
-
+      
+        
         /// <summary>
-        /// 重置一个新的Token值
+        /// 用户登录
         /// </summary>
         /// <param name="user"></param>
         /// <returns></returns>
+
         [HttpPost("GetAuthToken")]
         public dynamic GetAuthToken([FromBody] JwtUser user)
         {
-            var existUser = DB.Users.FirstOrDefault(u => u.UserName.Equals(user.UserName) && u.UserPassword.Equals(user.UserPassword));
+            var existUser = DB.Users.FirstOrDefault(u => u.UserName.Equals(user.Name) && u.UserPassword.Equals(user.Password));
 
             if (existUser != null)
             {
-                DateTime expires = DateTime.UtcNow.AddMinutes(2);
-                var token = tr.GenerateToken(user.UserName, expires);
-                return new { authenticated = true, entityId = 1, token = token, tokenExpires = expires };
+
+                var requestAt = DateTime.Now;
+                var expiresIn = requestAt + TokenAuthOption.ExpiresSpan;
+                var token = tr.GenerateToken(existUser, expiresIn,user.audience);
+
+                return JsonConvert.SerializeObject(new
+                {
+                    accessToken = token
+                });
             }
             return new { authenticated = false ,Msg = "用户名或密码错误"};
         }
