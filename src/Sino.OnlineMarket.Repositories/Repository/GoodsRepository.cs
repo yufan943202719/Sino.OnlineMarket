@@ -91,10 +91,9 @@ namespace Sino.OnlineMarket.Repositories.Repository
                     {
                         g.GoodsNum = goods.GoodsNum;
                     }
-                    if (goods.CreateDateTime != g.CreateDateTime)
-                    {
-                        g.CreateDateTime = goods.CreateDateTime;
-                    }
+
+                    g.CreateDateTime = goods.CreateDateTime;
+
                     count = DB.SaveChanges();
                 });
             }

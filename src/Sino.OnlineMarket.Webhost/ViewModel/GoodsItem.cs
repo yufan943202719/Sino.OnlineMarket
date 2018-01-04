@@ -32,5 +32,6 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
         /// 商品库存
         /// </summary>
         public int GoodsNum { get; set; }
+
     }
 }

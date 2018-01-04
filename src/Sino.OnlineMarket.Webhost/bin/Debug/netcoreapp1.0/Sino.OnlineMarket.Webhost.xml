@@ -55,7 +55,7 @@
             <param name="body"></param>
             <returns></returns>
         </member>
-        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.AlterGoodsInfo(Sino.OnlineMarket.Repositories.ViewModel.Goods)">
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.AlterGoodsInfo(Sino.OnlineMarket.Webhost.ViewModel.GoodsItem)">
             <summary>
             修改商品信息
             </summary>
