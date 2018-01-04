@@ -32,10 +32,6 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
         /// </summary>
         public double GoodsPrice { get; set; }
 
-        /// <summary>
-        /// 商品图片存放地址
-        /// </summary>
-        public string GoodsImagePath { get; set; }
 
         /// <summary>
         /// 商品库存

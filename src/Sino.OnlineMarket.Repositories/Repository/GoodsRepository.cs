@@ -86,10 +86,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
                     {
                         g.GoodsKind = goods.GoodsKind;
                     }
-                    if (goods.GoodsImagePath != "")
-                    {
-                        g.GoodsImagePath = goods.GoodsImagePath;
-                    }
+                 
                     if (goods.GoodsNum != g.GoodsNum)
                     {
                         g.GoodsNum = goods.GoodsNum;

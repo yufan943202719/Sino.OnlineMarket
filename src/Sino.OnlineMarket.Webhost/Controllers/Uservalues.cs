@@ -22,7 +22,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// <param name="body"></param>
         /// <returns></returns>
         [HttpPost("Register")]
-        public async Task<UserInfoResponse> Register([FromBody]Users body)
+        public async Task<UserInfoResponse> Register([FromBody]UserInfo body)
         {
             UserInfoResponse response = new UserInfoResponse();
             UsersRepository u = new UsersRepository();
@@ -65,7 +65,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             {
                 Users user = new Users
                 {
-                    UserId = body.UserId,
                     UserName = body.UserName,
                     UserPassword = body.UserPassword,
                     Sex = body.Sex,
@@ -119,13 +118,8 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         [HttpPost("AlterUserInfo")]
         public async Task<UserInfoResponse> AlterUserInfo([FromBody]Users body)
         {
-            UserInfoResponse response = new UserInfoResponse();
-            if (body.UserId == 0)
-            {
-                response.ReplyMsg = "用户ID不能为空！";
-                return response;
-            }
-            else if (body.UserName == "")
+            UserInfoResponse response = new UserInfoResponse(); 
+            if (body.UserName == "")
             {
                 response.ReplyMsg = "请填写您的用户名";
                 return response;

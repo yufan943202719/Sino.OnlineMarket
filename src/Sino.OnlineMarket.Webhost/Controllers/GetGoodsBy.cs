@@ -40,7 +40,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 goodsitem.GoodsId = goods[i].GoodsId;
                 goodsitem.GoodsName = goods[i].GoodsName;
                 goodsitem.GoodsPrice = goods[i].GoodsPrice;
-                goodsitem.GoodsImagePath = goods[i].GoodsImagePath;
                 goodsitem.GoodsNum = goods[i].GoodsNum;
                 response.GoodsItemListGorU.Add(goodsitem);
             }
@@ -68,7 +67,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             goodsitem.GoodsName = goods.GoodsName;
             goodsitem.GoodsPrice = goods.GoodsPrice;
             goodsitem.GoodsKind = goods.GoodsKind;
-            goodsitem.GoodsImagePath = goods.GoodsImagePath;
             goodsitem.GoodsNum = goods.GoodsNum;
             return goodsitem;
         }

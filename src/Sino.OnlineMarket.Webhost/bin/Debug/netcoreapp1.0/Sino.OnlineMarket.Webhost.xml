@@ -198,7 +198,7 @@
             <param name="Id"></param>
             <returns></returns>
         </member>
-        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.Register(Sino.OnlineMarket.Repositories.ViewModel.Users)">
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.Register(Sino.OnlineMarket.Webhost.ViewModel.UserInfo)">
             <summary>
             注册
             </summary>
@@ -294,11 +294,6 @@
             商品类型
             </summary>
         </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsImagePath">
-            <summary>
-            商品图片存放地址
-            </summary>
-        </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsNum">
             <summary>
             商品库存
@@ -322,11 +317,6 @@
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsKind">
             <summary>
             商品类型
-            </summary>
-        </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsImagePath">
-            <summary>
-            商品图片存放地址
             </summary>
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsNum">
@@ -357,11 +347,6 @@
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsKind">
             <summary>
             商品类型
-            </summary>
-        </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsImagePath">
-            <summary>
-            商品图片存放地址
             </summary>
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsNum">
@@ -409,11 +394,6 @@
             商品价格
             </summary>
         </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsImagePath">
-            <summary>
-            商品图片存放地址
-            </summary>
-        </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsNum">
             <summary>
             商品库存
@@ -439,11 +419,6 @@
             商品价格
             </summary>
         </member>
-        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsImagePath">
-            <summary>
-            商品图片存放地址
-            </summary>
-        </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsNum">
             <summary>
             商品库存
@@ -462,6 +437,46 @@
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.audience">
             <summary>
             当前用户身份
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UserInfo">
+            <summary>
+            用于用户注册
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.UserPassword">
+             <summary>
+            用户密码 
+             </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.PhoneNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.Address">
+            <summary>
+            收件地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.PostalCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList">
+            <summary>
+            用于查询单个用户信息
             </summary>
         </member>
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserId">

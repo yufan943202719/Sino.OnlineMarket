@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -7,20 +6,19 @@ using System.Threading.Tasks;
 namespace Sino.OnlineMarket.Webhost.ViewModel
 {
     /// <summary>
-    /// 用于查询单个用户信息
+    /// 用于用户注册
     /// </summary>
-
-    public class UserInfoList 
+    public class UserInfo
     {
-        /// <summary>
-        /// 用户编号
-        /// </summary>
-        public int UserId { get; set; }
-
         /// <summary>
         /// 用户名
         /// </summary>
         public string UserName { get; set; }
+
+        /// <summary>
+        ///用户密码 
+        /// </summary>
+        public string UserPassword { get; set; }
 
         /// <summary>
         /// 性别
