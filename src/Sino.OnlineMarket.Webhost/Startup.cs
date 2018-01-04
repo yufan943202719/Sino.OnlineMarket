@@ -65,6 +65,12 @@ namespace Sino.OnlineMarket.Webhost
             services.AddSwaggerGen();
             services.AddEntityFrameworkSqlite().AddDbContext<OnlineMarketContext>();
 
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                 builder => builder.WithOrigins("http://localhost:5000").AllowAnyHeader().AllowAnyOrigin().AllowAnyMethod());
+            });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -140,13 +146,14 @@ namespace Sino.OnlineMarket.Webhost
             app.UseApplicationInsightsExceptionTelemetry();
 
 
-            /* app.UseStaticFiles(new StaticFileOptions()
-             {
-                 FileProvider = new PhysicalFileProvider(
-                  Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, @"Images")),
-                 RequestPath = new PathString(@"/sino")
-             });
-             */
+          
+
+            
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = new PhysicalFileProvider(Path.Combine(Directory.GetCurrentDirectory(), @"wwwroot/Files")),
+                RequestPath = new PathString("/src")
+            });
         }
     }
 }
