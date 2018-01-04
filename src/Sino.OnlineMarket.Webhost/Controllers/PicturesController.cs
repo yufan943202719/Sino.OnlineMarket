@@ -30,7 +30,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// 上传图片
         /// </summary>
         /// <returns></returns>
-        [HttpPost]
+        [HttpPost("Post")]
         public IActionResult Post()
         {
             var files = Request.Form.Files;

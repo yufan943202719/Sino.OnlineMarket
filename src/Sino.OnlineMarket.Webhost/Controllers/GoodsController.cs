@@ -141,7 +141,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpPost("AlterGoodsInfo")]
-        public async Task<GoodsResponse> AlterGoodsInfo([FromBody]Goods body)
+        public async Task<GoodsResponse> AlterGoodsInfo([FromBody]GoodsItem body)
         {
             GoodsResponse response = new GoodsResponse();
             if (body.GoodsId == "")
@@ -169,14 +169,19 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 response.ReplyMsg = "商品价格不能为空";
                 return response;
             }
-            else if(body.CreateDateTime.Equals(""))
-            {
-                response.ReplyMsg = "商品录入时间不能为空";
-                return response;
-            }
             else
             {
-                var count = await gr.EditGoods(body);
+                Goods goods = new Goods
+                {
+                    GoodsId = body.GoodsId,
+                    GoodsName = body.GoodsName,
+                    GoodsPrice = body.GoodsPrice,
+                    GoodsKind = body.GoodsKind,
+                    GoodsNum = body.GoodsNum,
+                    CreateDateTime = DateTime.Now
+
+                };
+                var count = await gr.EditGoods(goods);
                 if (count > 0)
                 {
                     response.ReplyMsg = "用户信息修改成功";
