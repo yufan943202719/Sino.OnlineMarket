@@ -15,7 +15,8 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     /// <summary>
     ///商品显示
     /// </summary>
-    [Route("sino/[controller]")] 
+    [Route("sino/[controller]")]
+    [Authorize]
     public class GoodsShow : Controller
     {
 
@@ -27,7 +28,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("GetAllGoods")]
-        [Authorize("Bearer")]
         public GoodsListResponseForU GetAllGoods()
         {
             GoodsListResponseForU response = new GoodsListResponseForU();
