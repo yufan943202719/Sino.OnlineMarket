@@ -35,7 +35,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
         }
 
        /// <summary>
-       /// 购买商品
+       /// 购买单个商品
        /// </summary>
        /// <param name="Userid">用户编号</param>
        /// <param name="Goodsid">商品编码</param>
@@ -69,6 +69,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             }
             return count;
         }
+
 
         /// <summary>
         /// 购买购物车中全部商品
