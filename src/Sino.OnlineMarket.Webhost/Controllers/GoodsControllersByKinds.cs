@@ -40,7 +40,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 gli.GoodsId = listgoods[i].GoodsId;
                 gli.GoodsName = listgoods[i].GoodsName;
                 gli.GoodsPrice = listgoods[i].GoodsPrice;
-                gli.GoodsImagePath = listgoods[i].GoodsImagePath.ToString();
                 gli.GoodsNum = listgoods[i].GoodsNum;
                 gli.CreateDateTime = listgoods[i].CreateDateTime;
                 goodslistitem.Add(gli);
@@ -60,12 +59,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         public async Task<GoodsResponse> AddGoods([FromBody] GoodsItem body)
         {
             GoodsResponse response = new GoodsResponse();
-            if (body.GoodsImagePath == "")
-            {
-                response.ReplyMsg = "图片不能为空";
-                return response;
-            }
-            else if (body.GoodsId == "")
+            if (body.GoodsId == "")
             {
                 response.ReplyMsg = "商品编码不能为空";
                 return response;
@@ -104,7 +98,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                     GoodsName = body.GoodsName,
                     GoodsPrice = body.GoodsPrice,
                     GoodsKind = body.GoodsKind,
-                    GoodsImagePath = body.GoodsImagePath,
                     GoodsNum = body.GoodsNum,
                     CreateDateTime = DateTime.Now
 

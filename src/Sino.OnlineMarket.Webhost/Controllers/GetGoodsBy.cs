@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Sino.OnlineMarket.Webhost.ViewModel;
 using Sino.OnlineMarket.Repositories.Repository;
 using Sino.OnlineMarket.Repositories.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -16,6 +17,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     /// 商品搜索
     /// </summary>
     [Route("sino/[controller]")]
+    [Authorize]
     public class GetGoodsBy : Controller
     {
         private GoodsRepository gr = new GoodsRepository();
@@ -40,7 +42,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 goodsitem.GoodsId = goods[i].GoodsId;
                 goodsitem.GoodsName = goods[i].GoodsName;
                 goodsitem.GoodsPrice = goods[i].GoodsPrice;
-                goodsitem.GoodsImagePath = goods[i].GoodsImagePath;
                 goodsitem.GoodsNum = goods[i].GoodsNum;
                 response.GoodsItemListGorU.Add(goodsitem);
             }
@@ -68,7 +69,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             goodsitem.GoodsName = goods.GoodsName;
             goodsitem.GoodsPrice = goods.GoodsPrice;
             goodsitem.GoodsKind = goods.GoodsKind;
-            goodsitem.GoodsImagePath = goods.GoodsImagePath;
             goodsitem.GoodsNum = goods.GoodsNum;
             return goodsitem;
         }

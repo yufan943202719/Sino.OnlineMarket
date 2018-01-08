@@ -38,7 +38,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 gli.GoodsName = listgoods[i].GoodsName;
                 gli.GoodsPrice = listgoods[i].GoodsPrice;
                 gli.GoodsKind = listgoods[i].GoodsKind;
-                gli.GoodsImagePath = listgoods[i].GoodsImagePath.ToString();
                 gli.GoodsNum = listgoods[i].GoodsNum;
                 gli.CreateDateTime = listgoods[i].CreateDateTime;
                 goodsitemlist.Add(gli);
@@ -74,12 +73,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         {
 
             GoodsResponse response = new GoodsResponse();
-            if (body.GoodsImagePath == "")
-            {
-                response.ReplyMsg = "图片不能为空";
-                return response;
-            } 
-            else if(body.GoodsId == "")
+            if(body.GoodsId == "")
             {
                 response.ReplyMsg = "商品编码不能为空";
                 return response;
@@ -123,7 +117,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                     GoodsName = body.GoodsName,
                     GoodsPrice = body.GoodsPrice,
                     GoodsKind = body.GoodsKind,
-                    GoodsImagePath = body.GoodsImagePath,
                     GoodsNum = body.GoodsNum,
                     CreateDateTime = DateTime.Now
 
@@ -148,7 +141,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// <param name="Id"></param>
         /// <returns></returns>
         [HttpPost("AlterGoodsInfo")]
-        public async Task<GoodsResponse> AlterGoodsInfo([FromBody]Goods body)
+        public async Task<GoodsResponse> AlterGoodsInfo([FromBody]GoodsItem body)
         {
             GoodsResponse response = new GoodsResponse();
             if (body.GoodsId == "")
@@ -176,19 +169,19 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 response.ReplyMsg = "商品价格不能为空";
                 return response;
             }
-            else if(body.CreateDateTime.Equals(""))
-            {
-                response.ReplyMsg = "商品录入时间不能为空";
-                return response;
-            }
-            else if(body.GoodsImagePath == "")
-            {
-                response.ReplyMsg = "商品图片存放地址不能为空";
-                return response;
-            }
             else
             {
-                var count = await gr.EditGoods(body);
+                Goods goods = new Goods
+                {
+                    GoodsId = body.GoodsId,
+                    GoodsName = body.GoodsName,
+                    GoodsPrice = body.GoodsPrice,
+                    GoodsKind = body.GoodsKind,
+                    GoodsNum = body.GoodsNum,
+                    CreateDateTime = DateTime.Now
+
+                };
+                var count = await gr.EditGoods(goods);
                 if (count > 0)
                 {
                     response.ReplyMsg = "用户信息修改成功";

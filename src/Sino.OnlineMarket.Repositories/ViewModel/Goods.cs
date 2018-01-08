@@ -28,11 +28,6 @@ namespace Sino.OnlineMarket.Repositories.ViewModel
         public string GoodsKind { get; set; }
 
         /// <summary>
-        /// 商品图片存放地址
-        /// </summary>
-        public string GoodsImagePath { get; set; }
-
-        /// <summary>
         /// 商品库存
         /// </summary>
         public int GoodsNum { get; set; }

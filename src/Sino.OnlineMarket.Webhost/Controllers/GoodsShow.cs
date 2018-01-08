@@ -15,7 +15,8 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     /// <summary>
     ///商品显示
     /// </summary>
-    [Route("sino/[controller]")] 
+    [Route("sino/[controller]")]
+    [Authorize]
     public class GoodsShow : Controller
     {
 
@@ -27,7 +28,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpGet("GetAllGoods")]
-        [Authorize("Bearer")]
         public GoodsListResponseForU GetAllGoods()
         {
             GoodsListResponseForU response = new GoodsListResponseForU();
@@ -41,7 +41,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 gli.GoodsName = listgoods[i].GoodsName;
                 gli.GoodsPrice = listgoods[i].GoodsPrice;
                 gli.GoodsKind = listgoods[i].GoodsKind;
-                gli.GoodsImagePath = listgoods[i].GoodsImagePath.ToString();
                 gli.GoodsNum = listgoods[i].GoodsNum;
                 goodsitemlistforu.Add(gli);
             }
@@ -69,7 +68,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 gli.GoodsId = listgoods[i].GoodsId;
                 gli.GoodsName = listgoods[i].GoodsName;
                 gli.GoodsPrice = listgoods[i].GoodsPrice;
-                gli.GoodsImagePath = listgoods[i].GoodsImagePath.ToString();
                 gli.GoodsNum = listgoods[i].GoodsNum;
                 goodslistitemforu.Add(gli);
             }
