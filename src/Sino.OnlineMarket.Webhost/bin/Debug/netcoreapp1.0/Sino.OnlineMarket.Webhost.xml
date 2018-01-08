@@ -11,6 +11,15 @@
             <param name="body"></param>
             <returns></returns>
         </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.AdministratorController.AlterAdminPwd(System.String,System.String,System.String)">
+            <summary>
+            密码修改
+            </summary>
+            <param name="adminId"></param>
+            <param name="Pwd"></param>
+            <param name="newPwd"></param>
+            <returns></returns>
+        </member>
         <member name="T:Sino.OnlineMarket.Webhost.Controllers.GetGoodsBy">
             <summary>
             商品搜索

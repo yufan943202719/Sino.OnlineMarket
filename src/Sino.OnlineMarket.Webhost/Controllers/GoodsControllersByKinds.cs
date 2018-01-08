@@ -31,12 +31,12 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         {
             GoodsListWithKindResponseForA response = new GoodsListWithKindResponseForA();
             List<Goods> listgoods = await gr.GetAllGoodsWithKind(kind);
-            response.TotalCount = gr.GetAllGoodsWithKind().Result.Count;
+            response.TotalCount = gr.GetAllGoodsWithKind(kind).Result.Count;
+            response.GoodsKind = kind;
             List<GoodsListItem> goodslistitem = new List<GoodsListItem>();
             for(int i = 0;i < listgoods.Count; i++)
             {
                 GoodsListItem gli = new GoodsListItem();
-                gli.GoodsId = listgoods[i].GoodsId;
                 gli.GoodsId = listgoods[i].GoodsId;
                 gli.GoodsName = listgoods[i].GoodsName;
                 gli.GoodsPrice = listgoods[i].GoodsPrice;
@@ -86,12 +86,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             }
             else
             {
-                /* var file = HttpContext.Request.Form.Files[0];
-                Stream stream = file.OpenReadStream();
-                string fileName = DateTime.Now.Ticks.ToString() + file.FileName;
-                var ImagePath = gr.StreamToFile(stream, fileName);
-                string gname = g.GoodsName;
-                */
                 Goods goods = new Goods
                 {
                     GoodsId = body.GoodsId,
@@ -115,18 +109,8 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             }
         }
            
-        /*(未完待续)
-   /// <summary>
-   /// 修改商品信息
-   /// </summary>
-   /// <param name="Id"></param>
-   /// <returns></returns>
-   [HttpGet("AlterGoodsById")]
-   public async Task<GoodsResponse> AlterGoodsById(string Id)
-   {
-
-   }
-   */
+   
+        //修改商品，待续
 
         /// <summary>
         /// 下架商品
