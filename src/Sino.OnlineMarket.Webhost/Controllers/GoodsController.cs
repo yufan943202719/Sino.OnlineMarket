@@ -105,12 +105,6 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             }
             else
             {
-                /*
-                 * var file = HttpContext.Request.Form.Files[0];
-                Stream stream = file.OpenReadStream();
-                string fileName = DateTime.Now.Ticks.ToString() + file.FileName;
-                var ImagePath = gr.StreamToFile(stream, fileName);
-            */
                 Goods goods = new Goods
                 {
                     GoodsId = body.GoodsId,

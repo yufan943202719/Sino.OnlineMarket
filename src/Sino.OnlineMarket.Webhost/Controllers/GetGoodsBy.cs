@@ -28,15 +28,38 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         /// </summary>
         /// <param name="name"></param>
         /// <returns></returns>
+        //[HttpGet("GetGoodsByName")]
+        /* public async Task<GoodsListResponseForU> GetGoodsByName(string name)
+         {
+             GoodsListResponseForU response = new GoodsListResponseForU();
+             response.ToalCount = gr.GetGoodsDetialByName(name).Result.Count;
+             List<Goods> goods = new List<Goods>();
+             goods = await gr.GetGoodsDetialByName(name);
+             List<GoodsItemListForU> list = new List<GoodsItemListForU>();
+
+             for(int i = 0;i < goods.Count; i++)
+             {
+                 GoodsItemListForU goodsitem = new GoodsItemListForU();
+                 goodsitem.GoodsId = goods[i].GoodsId;
+                 goodsitem.GoodsName = goods[i].GoodsName;
+                 goodsitem.GoodsPrice = goods[i].GoodsPrice;
+                 goodsitem.GoodsNum = goods[i].GoodsNum;
+                 list.Add(goodsitem);
+             }
+             response.GoodsItemListGorU = list;
+
+             return response;
+         }*/
         [HttpGet("GetGoodsByName")]
-        public async Task<GoodsListResponseForU> GetGoodsByName(string name)
+        public async Task<List<GoodsItemListForU>> GetGoodsByName(string name)
         {
             GoodsListResponseForU response = new GoodsListResponseForU();
             response.ToalCount = gr.GetGoodsDetialByName(name).Result.Count;
             List<Goods> goods = new List<Goods>();
             goods = await gr.GetGoodsDetialByName(name);
             
-            for(int i = 0;i < goods.Count; i++)
+
+            for (int i = 0; i < goods.Count; i++)
             {
                 GoodsItemListForU goodsitem = new GoodsItemListForU();
                 goodsitem.GoodsId = goods[i].GoodsId;
@@ -45,9 +68,9 @@ namespace Sino.OnlineMarket.Webhost.Controllers
                 goodsitem.GoodsNum = goods[i].GoodsNum;
                 response.GoodsItemListGorU.Add(goodsitem);
             }
-           
 
-            return response ;
+
+            return response.GoodsItemListGorU;
         }
 
         /// <summary>

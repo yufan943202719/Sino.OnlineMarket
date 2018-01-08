@@ -32,34 +32,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
             catch (Exception ex) { Console.WriteLine("出错啦！" + ex.Message.ToString()); }
             return count;
         }
-        /*
-        /// <summary>
-        /// 商品图片路径
-        /// </summary>
-        /// <param name="stream"></param>
-        /// <param name="fileName"></param>
-        /// <returns></returns>
-        public string StreamToFile(Stream stream, string fileName)
-        {
-            // 把 Stream 转换成 byte[]   
-            byte[] bytes = new byte[stream.Length];
-            stream.Read(bytes, 0, bytes.Length);
-            // 设置当前流的位置为流的开始   
-            stream.Seek(0, SeekOrigin.Begin);
 
-            // 把 byte[] 写入文件   
-            var path = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, @"Images");
-            string s = @"/";
-            var ImagePath = path + s + fileName;
-            FileStream fs = new FileStream(ImagePath, FileMode.Create);
-            BinaryWriter bw = new BinaryWriter(fs);
-            bw.Write(bytes);
-            bw.Flush();
-            fs.Flush();
-
-            return ImagePath;
-        }
-        */
 
         /// <summary>
         /// 修改商品信息
@@ -167,7 +140,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
         /// </summary>
         /// <param name="Kind">商品类型</param>
         /// <returns></returns>
-        public async Task<List<Goods>> GetAllGoodsWithKind(string Kind = null)
+        public async Task<List<Goods>> GetAllGoodsWithKind(string Kind=null )
         {
             List<Goods> listgoods = new List<Goods>();
             var goodslist = DB.Goods.ToList();
@@ -176,7 +149,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
                 await Task.Run(() =>
                 {
                     if (Kind != null)
-                    { listgoods = goodslist.Where(x => x.GoodsKind == Kind).ToList(); }
+                    { listgoods = goodslist.Where(x => string .Equals( x.GoodsKind , Kind)).ToList(); }
                     else { listgoods = goodslist.ToList(); }
                 });
             }

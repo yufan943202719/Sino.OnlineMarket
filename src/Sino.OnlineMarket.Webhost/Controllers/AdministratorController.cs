@@ -31,7 +31,46 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             return response;
         }
 
-       //密码修改  未完待续
+        /// <summary>
+        /// 密码修改
+        /// </summary>
+        /// <param name="adminId"></param>
+        /// <param name="Pwd"></param>
+        /// <param name="newPwd"></param>
+        /// <returns></returns>
+        [HttpPost("AlterAdminPwd")]
+        public AdministratorResponse AlterAdminPwd(string adminId = null, string Pwd = null, string newPwd = null)
+        {
+            AdministratorResponse response = new AdministratorResponse();
+            if (adminId == null)
+            {
+                response.ReplyMsg = "账号不能为空";
+                return response;
+            }
+            else if (Pwd == null)
+            {
+                response.ReplyMsg = "原密码不能为空";
+                return response;
+            }
+            else if (newPwd == null)
+            {
+                response.ReplyMsg = "新密码不能为空";
+                return response;
+            }
+            else
+            {
+                var count =ar.EditAdminPwd(adminId, Pwd, newPwd);
+                if (count > 0)
+                {
+                    response.ReplyMsg = "密码修改成功";
+                }
+                else
+                {
+                    response.ReplyMsg = "密码修改失败";
+                }
+                return response;
+            }
+        }
 
     }
 }
