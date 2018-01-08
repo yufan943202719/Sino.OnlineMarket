@@ -28,12 +28,12 @@ namespace Sino.OnlineMarket.Webhost.Controllers
 
 
        /// <summary>
-       /// 购买商品
+       /// 购买购物车中单个商品
        /// </summary>
        /// <param name="Userid">用户编号</param>
        /// <param name="Goodsid">商品编码</param>
        /// <returns></returns>
-        [HttpPut("BuyGoods")]
+        [HttpPut("BuyGoodsSingle")]
         public async Task<BuyGoodsResponse> BuyGoods(int Userid, string Goodsid)
         {
             BuyGoodsResponse response = new BuyGoodsResponse();
@@ -52,6 +52,29 @@ namespace Sino.OnlineMarket.Webhost.Controllers
             return response;
         }
 
+        /// <summary>
+        /// 购买购物车中全部商品
+        /// </summary>
+        /// <param name="Userid">用户编号</param>
+        /// <returns></returns>
+        [HttpPut("BuyGoodsAll")]
+        public async Task<BuyGoodsResponse> BuyGoods(int Userid)
+        {
+            BuyGoodsResponse response = new BuyGoodsResponse();
+
+
+
+            var count = await BuyGoodsRepository.AlterBuyGoodsAll(Userid);
+            if (count > 0)
+            {
+                response.ReplyMsg = "购买成功";
+            }
+            else
+            {
+                response.ReplyMsg = "购买失败";
+            }
+            return response;
+        }
 
 
         /// <summary>

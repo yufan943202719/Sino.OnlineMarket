@@ -120,10 +120,17 @@
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.BuyGoods(System.Int32,System.String)">
             <summary>
-            购买商品
+            购买购物车中单个商品
             </summary>
             <param name="Userid">用户编号</param>
             <param name="Goodsid">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.BuyGoods(System.Int32)">
+            <summary>
+            购买购物车中全部商品
+            </summary>
+            <param name="Userid"></param>
             <returns></returns>
         </member>
         <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.TaketoShoppingCar(Sino.OnlineMarket.Repositories.ViewModel.BuyGoods)">

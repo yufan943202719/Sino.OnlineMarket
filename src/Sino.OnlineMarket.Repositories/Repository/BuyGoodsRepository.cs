@@ -70,6 +70,43 @@ namespace Sino.OnlineMarket.Repositories.Repository
             return count;
         }
 
+        /// <summary>
+        /// 购买购物车中全部商品
+        /// </summary>
+        /// <param name="Userid">用户编号</param>
+        /// <returns></returns>
+        public async Task<int> AlterBuyGoodsAll(int Userid)
+        {
+            int count = 0;
+            try
+            {
+
+                var buy = DB.BuyGoods.Where(t => t.UserId == Userid);
+
+                foreach (var b in buy)
+                {
+                    if (b.BuyStatus == 1)
+                    {
+                        b.BuyDateTime = DateTime.Now;
+                        b.BuyStatus = 2;
+                        DB.BuyGoods.Update(b);
+
+                        await Task.Run(() =>
+                        {
+                            count = DB.SaveChanges();
+
+                        });
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("获取错误信息：{0}", ex.Message.ToString());
+            }
+            return count;
+        }
+
 
         /// <summary>
         /// 显示购物车的商品
