@@ -21,7 +21,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
     /// </summary>
 
     [Route("sino/[controller]")]
-    [Authorize]
+    //[Authorize]
     public class GoodsToUsers : Controller
     {
         private BuyGoodsRepository BuyGoodsRepository = new BuyGoodsRepository();

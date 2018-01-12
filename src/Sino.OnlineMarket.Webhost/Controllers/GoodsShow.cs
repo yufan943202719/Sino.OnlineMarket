@@ -32,7 +32,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         {
             GoodsListResponseForU response = new GoodsListResponseForU();
             List<Goods> listgoods = gr.GetAllGoodsList();
-            response.ToalCount = gr.GetAllGetGoods().Result.Count;
+            response. ToalCount = gr.GetAllGetGoods().Result.Count;
             List<GoodsItemListForU> goodsitemlistforu = new List<GoodsItemListForU>();
             for (int i = 0; i < listgoods.Count; i++)
             {
@@ -59,7 +59,7 @@ namespace Sino.OnlineMarket.Webhost.Controllers
         {
             GoodsListWithKindResponseForU response = new GoodsListWithKindResponseForU();
             List<Goods> listgoods = await gr.GetAllGoodsWithKind(kind);
-            response.TotalCount = gr.GetAllGoodsWithKind().Result.Count;
+            response.TotalCount = gr.GetAllGoodsWithKind(kind).Result.Count;
             List<GoodsListItemForU> goodslistitemforu = new List<GoodsListItemForU>();
             for (int i = 0; i < listgoods.Count; i++)
             {

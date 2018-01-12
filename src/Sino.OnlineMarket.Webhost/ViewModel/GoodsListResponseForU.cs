@@ -10,7 +10,7 @@ namespace Sino.OnlineMarket.Webhost.ViewModel
 
         public int ToalCount { get; set; }
 
-        public List<GoodsItemListForU> GoodsItemListGorU { get; set; }
+        public List<GoodsItemListForU> GoodsItemListGorU = new List<GoodsItemListForU>();
     }
 
     public class GoodsItemListForU

@@ -18,7 +18,7 @@ namespace Sino.OnlineMarket.Repositories.Repository
         /// <returns></returns>
         public int GetAdministrator(string adminId,string password)
         {
-            Administrators admin = new Administrators();
+           
             List<Administrators> listadmin = DB.Administrators.ToList();
             if(listadmin.Count == 0)
             {
