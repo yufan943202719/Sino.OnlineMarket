@@ -1,0 +1,16 @@
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Images\README.txt
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.deps.json
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.runtimeconfig.json
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.runtimeconfig.dev.json
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.dll
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.pdb
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.xml
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Repositories.dll
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\bin\Debug\netcoreapp1.0\Sino.OnlineMarket.Repositories.pdb
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.csprojResolveAssemblyReference.cache
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.csproj.CoreCompileInputs.cache
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.AssemblyInfoInputs.cache
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.AssemblyInfo.cs
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.dll
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.xml
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Webhost\obj\Debug\netcoreapp1.0\Sino.OnlineMarket.Webhost.pdb

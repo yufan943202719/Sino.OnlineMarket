@@ -1,0 +1,9 @@
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\bin\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.deps.json
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\bin\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.dll
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\bin\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.pdb
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\obj\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.csprojResolveAssemblyReference.cache
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\obj\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.csproj.CoreCompileInputs.cache
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\obj\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.AssemblyInfoInputs.cache
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\obj\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.AssemblyInfo.cs
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\obj\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.dll
+E:\Repos\Sino.OnlineMarket2\src\Sino.OnlineMarket.Repositories\obj\Debug\netstandard1.6\Sino.OnlineMarket.Repositories.pdb
