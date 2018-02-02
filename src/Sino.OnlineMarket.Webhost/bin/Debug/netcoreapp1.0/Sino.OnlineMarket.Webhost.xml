@@ -189,6 +189,19 @@
             </summary>
             <returns></returns>
         </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.SmsController">
+            <summary>
+            短信接口
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.SmsController.PushSms(System.String,System.String)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="phone">手机号码（大于1个用逗号隔开）</param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
         <member name="T:Sino.OnlineMarket.Webhost.Controllers.UserControllers">
             <summary>
             管理用户
@@ -227,6 +240,11 @@
             </summary>
             <param name="body"></param>
             <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ToolMethods.SmsSend">
+            <summary>
+            发送短信
+            </summary>
         </member>
         <member name="T:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem">
             <summary>
@@ -566,6 +584,152 @@
         <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.PostalCode">
             <summary>
             邮政编码
+            </summary>
+        </member>
+        <member name="M:WeatherAPI.controller.WeatherController.GetWeather(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            获取城市天气预报
+            </summary>
+            <param name="city">城市</param>
+            <param name="cityid">城市ID</param>
+            <param name="citycode">城市天气代号</param>
+            <param name="location">经纬度（纬度在前，逗号分隔）</param>
+            <param name="ip">IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.AqiVM">
+            <summary>
+            AQI指数类
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.AqiInformation">
+            <summary>
+            AQI指数信息类
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.DailyListVM">
+            <summary>
+            天气（按天时间）
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.HourlyListVM">
+            <summary>
+            天气（按小时）
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.IndexListVM">
+            <summary>
+            生活指数列表
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.IndexListVM.Iname">
+            <summary>
+            指数名称
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.IndexListVM.Ivalue">
+            <summary>
+            指数值
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.IndexListVM.Detail">
+            <summary>
+            指数详情
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.WeatherVM">
+            <summary>
+            详细天气信息
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Cityid">
+            <summary>
+            城市ID
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Citycode">
+            <summary>
+            城市天气代号
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Week">
+            <summary>
+            星期
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Weather">
+            <summary>
+            天气
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Temp">
+            <summary>
+            气温
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Temphigh">
+            <summary>
+            最高气温
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Templow">
+            <summary>
+            最低气温
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Img">
+            <summary>
+            图片数字
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Humidity">
+            <summary>
+            湿度
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Pressure">
+            <summary>
+            气压
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Windspeed">
+            <summary>
+            风速
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Winddirect">
+            <summary>
+            风向
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Windpower">
+            <summary>
+            风级
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Updatetime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Index">
+            <summary>
+            生活指数
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Aqi">
+            <summary>
+            AQI指数
             </summary>
         </member>
     </members>

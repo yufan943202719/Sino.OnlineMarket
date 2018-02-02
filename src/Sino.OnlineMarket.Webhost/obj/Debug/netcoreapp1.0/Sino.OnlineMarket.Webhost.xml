@@ -1,0 +1,736 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sino.OnlineMarket.Webhost</name>
+    </assembly>
+    <members>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.AdministratorController.Login(Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem)">
+            <summary>
+            管理人员登陆
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.AdministratorController.AlterAdminPwd(System.String,System.String,System.String)">
+            <summary>
+            密码修改
+            </summary>
+            <param name="adminId"></param>
+            <param name="Pwd"></param>
+            <param name="newPwd"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.GetGoodsBy">
+            <summary>
+            商品搜索
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GetGoodsBy.GetGoodsByName(System.String)">
+            <summary>
+            通过商品名字搜索
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GetGoodsBy.GetGoodsById(System.String)">
+            <summary>
+            通过商品编码搜索
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.GoodsController">
+            <summary>
+            商品汇总管理
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.GetAllGoods">
+            <summary>
+            获取所有商品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.SelectGoodsById(System.String)">
+            <summary>
+            商品编码查询  
+            </summary>
+            <param name="Id">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.AddGoods(Sino.OnlineMarket.Webhost.ViewModel.GoodsItem)">
+            <summary>
+            上架商品
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.AlterGoodsInfo(Sino.OnlineMarket.Webhost.ViewModel.GoodsItem)">
+            <summary>
+            修改商品信息
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsController.DeleteGoodsById(System.String)">
+            <summary>
+            下架商品
+            </summary>
+            <param name="Id">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.GoodsControllersByKinds">
+            <summary>
+            商品分类管理
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsControllersByKinds.GetGoodsByKind(System.String)">
+            <summary>
+            分类显示商品
+            </summary>
+            <param name="kind"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsControllersByKinds.AddGoods(Sino.OnlineMarket.Webhost.ViewModel.GoodsItem)">
+            <summary>
+            上架商品
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsControllersByKinds.DeleteGoodsById(System.String)">
+            <summary>
+            下架商品
+            </summary>
+            <param name="Id">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.GoodsShow">
+             <summary>
+            商品显示
+             </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsShow.GetAllGoods">
+            <summary>
+            获取所有商品
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsShow.GetGoodsByKind(System.String)">
+            <summary>
+            分类显示商品
+            </summary>
+            <param name="kind"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers">
+            <summary>
+            用户购物信息
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.BuyGoods(System.Int32,System.String)">
+            <summary>
+            购买商品
+            </summary>
+            <param name="Userid">用户编号</param>
+            <param name="Goodsid">商品编码</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.TaketoShoppingCar(Sino.OnlineMarket.Repositories.ViewModel.BuyGoods)">
+            <summary>
+            添加到购物车
+            </summary>
+            <param name="body">用户和商品编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.GetGoodsFromCar(System.Int32)">
+            <summary>
+            查询购物车信息
+            </summary>
+            <param name="Userid">用户编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.DeleteBuyGoodsSingle(System.Int32,System.String)">
+            <summary>
+            删除单个商品
+            </summary>
+            <param name="Userid">用户编号</param>
+            <param name="Goodsid">商品编号</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.DeleteBuyGoodsFromCar(System.Int32)">
+             <summary>
+            清空购物车
+             </summary>
+             <param name="Userid">用户编号</param>
+             <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.GoodsToUsers.GetBuyGoods(System.Int32)">
+            <summary>
+            显示已购商品记录
+            </summary>
+            <param name="id"></param>
+            <returns></returns>             
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin">
+            <summary>
+            JWT用户登陆
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.JwtUserLogin.GetAuthToken(Sino.OnlineMarket.Webhost.ViewModel.JwtUser)">
+            <summary>
+            用户登录
+            </summary>
+            <param name="user"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.PicturesController.Post">
+            <summary>
+            上传图片
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.SmsController">
+            <summary>
+            短信接口
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.SmsController.PushSms(System.String,System.String)">
+            <summary>
+            发送短信
+            </summary>
+            <param name="phone">手机号码（大于1个用逗号隔开）</param>
+            <param name="context"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.Controllers.UserControllers">
+            <summary>
+            管理用户
+            </summary>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.UserControllers.GetAllUsers">
+            <summary>
+            显示所有用户信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.UserControllers.GetUserById(System.Int32)">
+            <summary>
+            搜索用户
+            </summary>
+            <param name="Id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.Register(Sino.OnlineMarket.Webhost.ViewModel.UserInfo)">
+            <summary>
+            注册
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.GetUserInfo(System.Int32)">
+            <summary>
+            获取单个用户信息
+            </summary>
+            <param name="UserId">用户ID</param>
+            <returns></returns>
+        </member>
+        <member name="M:Sino.OnlineMarket.Webhost.Controllers.Uservalues.AlterUserInfo(Sino.OnlineMarket.Repositories.ViewModel.Users)">
+            <summary>
+            修改用户信息
+            </summary>
+            <param name="body"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ToolMethods.SmsSend">
+            <summary>
+            发送短信
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem">
+            <summary>
+            管理员登陆
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem.AdminId">
+            <summary>
+            管理人员编号
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.AdministratorLoginItem.AdminPasword">
+            <summary>
+            管理密码
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.AdministratorResponse">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsListResponse.TotalCount">
+            <summary>
+            购物车列表信息条数
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsListResponse.BuyGoodsList">
+            <summary>
+            购物车信息列表
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsList">
+            <summary>
+            购物信息
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsList.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsList.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsList.BuyStatus">
+            <summary>
+            商品状态
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.BuyGoodsList.BuyDatetime">
+            <summary>
+            购物状态更新时间
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsKind">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItem.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsKind">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemList.CreateDateTime">
+            <summary>
+            商品录入时间
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsKind">
+            <summary>
+            商品类型
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsItemListForU.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.GoodsListWithKindResponseForA">
+            <summary>
+            单类呈现商品列表
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListWithKindResponseForA.TotalCount">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListWithKindResponseForA.GoodsKind">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListWithKindResponseForA.GoodsList">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItem.CreateDateTime">
+            <summary>
+            商品录入时间
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsId">
+            <summary>
+            商品编码
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsName">
+            <summary>
+            商品名称
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsPrice">
+            <summary>
+            商品价格
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.GoodsListItemForU.GoodsNum">
+            <summary>
+            商品库存
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.Name">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.Password">
+             <summary>
+            用户密码 
+             </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.JwtUser.audience">
+            <summary>
+            当前用户身份
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UserInfo">
+            <summary>
+            用于用户注册
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.UserPassword">
+             <summary>
+            用户密码 
+             </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.PhoneNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.Address">
+            <summary>
+            收件地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfo.PostalCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList">
+            <summary>
+            用于查询单个用户信息
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.PhoneNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.Address">
+            <summary>
+            收件地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserInfoList.PostalCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UsersListItem">
+            <summary>
+            用户列表
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UsersListItem.TotalCount">
+            <summary>
+            用户总数
+            </summary>
+        </member>
+        <member name="T:Sino.OnlineMarket.Webhost.ViewModel.UserItem">
+            <summary>
+            用户信息
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.UserId">
+            <summary>
+            用户编号
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.UserName">
+            <summary>
+            用户名
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.UserPassword">
+             <summary>
+            用户密码 
+             </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.Sex">
+            <summary>
+            性别
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.PhoneNum">
+            <summary>
+            联系电话
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.Address">
+            <summary>
+            收件地址
+            </summary>
+        </member>
+        <member name="P:Sino.OnlineMarket.Webhost.ViewModel.UserItem.PostalCode">
+            <summary>
+            邮政编码
+            </summary>
+        </member>
+        <member name="M:WeatherAPI.controller.WeatherController.GetWeather(System.String,System.Int32,System.String,System.String,System.String)">
+            <summary>
+            获取城市天气预报
+            </summary>
+            <param name="city">城市</param>
+            <param name="cityid">城市ID</param>
+            <param name="citycode">城市天气代号</param>
+            <param name="location">经纬度（纬度在前，逗号分隔）</param>
+            <param name="ip">IP地址</param>
+            <returns></returns>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.AqiVM">
+            <summary>
+            AQI指数类
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.AqiInformation">
+            <summary>
+            AQI指数信息类
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.DailyListVM">
+            <summary>
+            天气（按天时间）
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.HourlyListVM">
+            <summary>
+            天气（按小时）
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.IndexListVM">
+            <summary>
+            生活指数列表
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.IndexListVM.Iname">
+            <summary>
+            指数名称
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.IndexListVM.Ivalue">
+            <summary>
+            指数值
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.IndexListVM.Detail">
+            <summary>
+            指数详情
+            </summary>
+        </member>
+        <member name="T:WeatherAPI.ValueModel.WeatherVM">
+            <summary>
+            详细天气信息
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.City">
+            <summary>
+            城市
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Cityid">
+            <summary>
+            城市ID
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Citycode">
+            <summary>
+            城市天气代号
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Date">
+            <summary>
+            日期
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Week">
+            <summary>
+            星期
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Weather">
+            <summary>
+            天气
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Temp">
+            <summary>
+            气温
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Temphigh">
+            <summary>
+            最高气温
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Templow">
+            <summary>
+            最低气温
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Img">
+            <summary>
+            图片数字
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Humidity">
+            <summary>
+            湿度
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Pressure">
+            <summary>
+            气压
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Windspeed">
+            <summary>
+            风速
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Winddirect">
+            <summary>
+            风向
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Windpower">
+            <summary>
+            风级
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Updatetime">
+            <summary>
+            更新时间
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Index">
+            <summary>
+            生活指数
+            </summary>
+        </member>
+        <member name="P:WeatherAPI.ValueModel.WeatherVM.Aqi">
+            <summary>
+            AQI指数
+            </summary>
+        </member>
+    </members>
+</doc>
